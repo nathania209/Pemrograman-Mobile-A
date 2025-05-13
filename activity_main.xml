@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/main">
+
+<TextView
+        android:id="@+id/txtNamalengkap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nama Lengkap"
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/edittxtNamalengkap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write your fullname"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:minWidth="48dp"/>
+
+    <TextView
+        android:id="@+id/txtUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/edittxtUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write your username"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:minWidth="48dp"/>
+
+    <TextView
+        android:id="@+id/txtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/edittxtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write your password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:minWidth="48dp"/>
+
+    <TextView
+        android:id="@+id/txtConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm Password"
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/edittxtConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm your password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:minWidth="48dp"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"/>
+
+</LinearLayout>
