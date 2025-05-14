@@ -1,44 +1,44 @@
-package com.example.tugas1 
+package com.example.tugas1
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.tugas1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    // View Binding property
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main) 
 
-        val namaLengkap = findViewById<EditText>(R.id.edittxtNamalengkap)
-        val username = findViewById<EditText>(R.id.edittxtUsername)
-        val password = findViewById<EditText>(R.id.edittxtPassword)
-        val confirmPassword = findViewById<EditText>(R.id.edittxtConfirmPassword)
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
+        // Inisialisasi View Binding
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        btnLogin.setOnClickListener {
-            val nama = namaLengkap.text.toString()
-            val user = username.text.toString()
-            val pass = password.text.toString()
-            val confirm = confirmPassword.text.toString()
+        // Event tombol login
+        binding.btnLogin.setOnClickListener {
+            val nama = binding.edittxtNamalengkap.text.toString()
+            val username = binding.edittxtUsername.text.toString()
+            val password = binding.edittxtPassword.text.toString()
+            val confirmPassword = binding.edittxtConfirmPassword.text.toString()
 
             when {
-                nama.isBlank() || user.isBlank() || pass.isBlank() || confirm.isBlank() -> {
+                nama.isBlank() || username.isBlank() || password.isBlank() || confirmPassword.isBlank() -> {
                     Toast.makeText(this, "Semua field harus diisi!", Toast.LENGTH_SHORT).show()
                 }
-                pass != confirm -> {
+                password != confirmPassword -> {
                     Toast.makeText(this, "Password dan Confirm Password tidak cocok!", Toast.LENGTH_SHORT).show()
                 }
                 else -> {
                     Toast.makeText(this, "Login Berhasil\nSelamat datang, $nama!", Toast.LENGTH_LONG).show()
 
-                    //Kosongkan field setelah klik login
-                    namaLengkap.text.clear()
-                    username.text.clear()
-                    password.text.clear()
-                    confirmPassword.text.clear()
+                    // Kosongkan isian setelah login
+                    binding.edittxtNamalengkap.text?.clear()
+                    binding.edittxtUsername.text?.clear()
+                    binding.edittxtPassword.text?.clear()
+                    binding.edittxtConfirmPassword.text?.clear()
                 }
             }
         }
