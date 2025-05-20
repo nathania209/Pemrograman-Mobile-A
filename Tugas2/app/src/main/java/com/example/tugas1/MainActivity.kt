@@ -5,6 +5,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,6 +41,12 @@ class MainActivity : AppCompatActivity() {
                     username.text.clear()
                     password.text.clear()
                     confirmPassword.text.clear()
+
+                    //Pindah ke ActivityKedua
+                    val intent = Intent(this, ActivityKedua::class.java)
+                    startActivity(intent)
+                    finish()
+
                 }
             }
         }
